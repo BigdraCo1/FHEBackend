@@ -3,6 +3,8 @@
 
 config.default.yaml
 
+build/*
+
 ### C ###
 # Prerequisites
 *.d

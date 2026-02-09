@@ -17,6 +17,6 @@ int main() {
     //drogon::app().loadConfigFile("../config.json");
     //drogon::app().loadConfigFile("../config.yaml");
     //Run HTTP framework,the method will block in the internal event loop
-    app().loadConfigFile("../config.json").run();
+    app().loadConfigFile("../config.yaml").run();
     return 0;
 }
