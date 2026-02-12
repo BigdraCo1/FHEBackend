@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+cmake-build-*/
+
+# IDE files
+.idea/
+.vscode/
+.vs/
+*.code-workspace
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Caches
+.cache/
+.clangd/
+
+# Uploads (runtime data, not needed for build)
+uploads/
+
+# Config override (use config.yaml from repo)
+config.default.yaml

@@ -1,0 +1,31 @@
+{
+    "name": "FHE Backend",
+    "dockerComposeFile": "../docker-compose.dev.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "cmake.buildDirectory": "${workspaceFolder}/build",
+                "cmake.configureArgs": [
+                    "-DCMAKE_BUILD_TYPE=Debug"
+                ],
+                "editor.formatOnSave": true,
+                "C_Cpp.default.cppStandard": "c++20",
+                "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            },
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "twxs.cmake",
+                "ms-azuretools.vscode-docker",
+                "xaver.clang-format"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5670
+    ],
+    "postCreateCommand": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build -j$(nproc)",
+    "remoteUser": "dev"
+}

@@ -6,6 +6,6 @@ rm -rf *
 
 cmake ..
 
-make
+make -j$(sysctl -n hw.ncpu)
 
 ./FHEbackend
