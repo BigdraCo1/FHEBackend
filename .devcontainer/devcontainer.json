@@ -1,8 +1,8 @@
 {
     "name": "FHE Backend",
-    "dockerComposeFile": "../docker-compose.dev.yml",
-    "service": "app",
+    "image": "nixos/nix:latest",
     "workspaceFolder": "/workspace",
+    "postCreateCommand": "nix --extra-experimental-features 'nix-command flakes' develop --command bash -c 'cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build -j$(nproc)'",
     "customizations": {
         "vscode": {
             "settings": {
@@ -18,14 +18,13 @@
                 "ms-vscode.cpptools",
                 "ms-vscode.cmake-tools",
                 "twxs.cmake",
-                "ms-azuretools.vscode-docker",
-                "xaver.clang-format"
+                "xaver.clang-format",
+                "jnoortheen.nix-ide"
             ]
         }
     },
     "forwardPorts": [
         5670
     ],
-    "postCreateCommand": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build -j$(nproc)",
-    "remoteUser": "dev"
+    "remoteUser": "root"
 }

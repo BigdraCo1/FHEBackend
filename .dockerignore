@@ -33,3 +33,10 @@ uploads/
 
 # Config override (use config.yaml from repo)
 config.default.yaml
+
+# Nix
+flake.nix
+flake.lock
+.envrc
+.direnv/
+result
