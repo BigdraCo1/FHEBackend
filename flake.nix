@@ -73,7 +73,7 @@
 
             # ── Core libraries ──────────────────────────────────────────────
             openfhe
-            drogon
+            (drogon.override { withYaml = true; })
             opencv
 
             # ── Drogon transitive deps ──────────────────────────────────────
